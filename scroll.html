@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <title>scroll</title>
-<script src="js/freescroll.js"></script>
+<!-- <script src="js/freescroll.js"></script> -->
+<script src="js/freescroll.full.js"></script>
 <style>
 /*  Reset  */
 html,body,div,span,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,cite,code,del,em,img,q,small,strong,sub,sup,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend { margin:0; padding:0; border:0; font-size:100%;}
@@ -80,13 +81,45 @@ new Scroll("myscroll_E", {"move":"E"});
   <a href="#">标题5</a>
   <a href="#">标题6</a>
 </div>
+<p class="slider" id="myscroll2_slider"></p>
 <div class="but">
   <input class="mybut" type="button" value="上一个" id="myPrev" />
   <input class="mybut" type="button" value="下一个" id="myNext" />
 </div>
 <script>
-new Scroll("myscroll2", {move:"w", "prev":"myPrev", "next":"myNext", "auto":false, "range":100, "speed":20, "index":200});
+new Scroll("myscroll2", {
+      "move":"w",
+      "prev":"myPrev",
+      "next":"myNext",
+      "slider":"myscroll2_slider",
+      "auto":false,
+      "speed":20
+    });
 </script>
+
+<div id="myscroll2-1" class="heng">
+  <a href="#">标题1</a>
+  <a href="#">标题2</a>
+  <a href="#">标题3</a>
+  <a href="#">标题4</a>
+  <a href="#">标题5</a>
+  <a href="#">标题6</a>
+</div>
+<div class="but">
+  <input class="mybut" type="button" value="上一个" id="myPrev2-1" />
+  <input class="mybut" type="button" value="下一个" id="myNext2-1" />
+</div>
+<script>
+new Scroll("myscroll2-1", {
+      "move":"w",
+      "prev":"myPrev2-1",
+      "next":"myNext2-1",
+      "auto":false,
+      "range":100,
+      "speed":20
+    });
+</script>
+
 
 <div id="myscroll3" class="zong">
   <a href="#">标题1</a>
@@ -96,12 +129,20 @@ new Scroll("myscroll2", {move:"w", "prev":"myPrev", "next":"myNext", "auto":fals
   <a href="#">标题5</a>
   <a href="#">标题6</a>
 </div>
+<p class="slider" id="myscroll3_slider"></p>
 <div class="but">
   <input class="mybut" type="button" value="上一个" id="myZongPrev" />
   <input class="mybut" type="button" value="下一个" id="myZongNext" />
 </div>
 <script>
-new Scroll("myscroll3", {"move":"N", "prev":"myZongPrev", "next":"myZongNext", "auto":false, "range":40});
+new Scroll("myscroll3", {
+      "move":"N",
+      "prev":"myZongPrev",
+      "next":"myZongNext",
+      "slider":"myscroll3_slider",
+      "auto":false,
+      "range":40
+    });
 </script>
 
 <h2>间歇运动：</h2>
@@ -136,7 +177,7 @@ new Scroll("myscroll4_N", {"move":"N", "range":40, "rest":2000});
   <a href="#">标题4</a>
 </div>
 <script>
-new Scroll("myscroll5", {move:"w", "range":100, "rest":2000, "speed":50});
+new Scroll("myscroll5", {"move":"w", "range":100, "rest":2000, "speed":50});
 </script>
 
 <div id="myscroll5_E" class="heng">
@@ -176,7 +217,133 @@ new Scroll("myscroll6_N", {"move":"N", "prev":"myPrev6_N", "next":"myNext6_N", "
 </div>
 
 <script>
-new Scroll("myscroll6", {move:"w", "prev":"myPrev6", "next":"myNext6", "range":100, "rest":2000, "speed":20});
+new Scroll("myscroll6", {"move":"w", "prev":"myPrev6", "next":"myNext6", "range":100, "rest":2000, "speed":20});
+</script>
+
+<br /><br />
+<h2>不自动播放，但左右点击循环展示</h2>
+
+<div id="myscroll7" class="heng">
+  <a href="#">标题1</a>
+  <a href="#">标题2</a>
+  <a href="#">标题3</a>
+  <a href="#">标题4</a>
+</div>
+<div class="but">
+  <input class="mybut" type="button" value="上一个" id="myPrev7" />
+  <input class="mybut" type="button" value="下一个" id="myNext7" />
+</div>
+
+<script>
+new Scroll("myscroll7", {"move":"W", "prev":"myPrev7", "next":"myNext7", "range":100, "auto":false, "loop":true});
+</script>
+
+
+<div id="myscroll7_s" class="zong">
+  <a href="#">标题1</a>
+  <a href="#">标题2</a>
+  <a href="#">标题3</a>
+  <a href="#">标题4</a>
+</div>
+<div class="but">
+  <input class="mybut" type="button" value="上一个" id="myPrev7_s" />
+  <input class="mybut" type="button" value="下一个" id="myNext7_s" />
+</div>
+
+<script>
+new Scroll("myscroll7_s", {"move":"N", "prev":"myPrev7_s", "next":"myNext7_s", "range":80, "auto":false, "loop":true});
+</script>
+
+<!--
+<br /><br /><br /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内容未达到滚动宽度时无滚动效果<br />
+<div id="myscroll8" class="heng">
+  <a href="#">标题1</a>
+  <a href="#">标题2</a>
+</div>
+<div class="but">
+  <input class="mybut" type="button" value="上一个" id="myPrev8" />
+  <input class="mybut" type="button" value="下一个" id="myNext8" />
+</div>
+
+<script>
+new Scroll("myscroll8", {"move":"w", "prev":"myPrev8", "next":"myNext8", "range":100, "auto":false, "loop":true});
+</script>
+
+<div id="myscroll8_s" class="zong">
+  <a href="#">标题1</a>
+</div>
+<div class="but">
+  <input class="mybut" type="button" value="上一个" id="myPrev8_s" />
+  <input class="mybut" type="button" value="下一个" id="myNext8_s" />
+</div>
+
+<script>
+new Scroll("myscroll8_s", {"move":"N", "prev":"myPrev8_s", "next":"myNext8_s", "range":80, "auto":false, "loop":true});
+</script>
+-->
+
+
+<br /><br />
+<h2>带有触控点、循环自动播放 [Versions:2.3新加功能]</h2>
+<style>
+.slider { padding-left:50px; margin-bottom:15px; zoom:1; overflow:hidden;}
+.slider a { float:left; display:inline; padding:3px 7px; margin:0 4px; background:#ccc; color:#000;}
+.slider a:hover { color:#f00; text-decoration:none;}
+.slider a.current { background:#000; color:#fff;}
+</style>
+<div id="myscroll9" class="heng">
+  <a href="#">标题1</a>
+  <a href="#">标题2</a>
+  <a href="#">标题3</a>
+  <a href="#">标题4</a>
+  <a href="#">标题5</a>
+  <a href="#">标题6</a>
+  <a href="#">标题7</a>
+  <a href="#">标题8</a>
+  <a href="#">标题9</a>
+  <a href="#">标题10</a>
+  <a href="#">标题11</a>
+  <a href="#">标题12</a>
+</div>
+<p class="slider" id="myscroll9_slider"></p>
+<div class="but">
+  <input class="mybut" type="button" value="上一个" id="myPrev9" />
+  <input class="mybut" type="button" value="下一个" id="myNext9" />
+</div>
+
+<script>
+new Scroll("myscroll9", {
+      "move":"w",
+      "prev":"myPrev9",
+      "next":"myNext9",
+      "slider":"myscroll9_slider",
+      "mode":"click",
+      "rest":2000,
+      "speed":30
+    });
+</script>
+
+
+
+<div id="myscroll10" class="zong">
+  <a href="#">标题1</a>
+  <a href="#">标题2</a>
+  <a href="#">标题3</a>
+  <a href="#">标题4</a>
+  <a href="#">标题5</a>
+  <a href="#">标题6</a>
+</div>
+<p class="slider" id="myscroll10_slider"></p>
+
+<script>
+new Scroll("myscroll10", {
+      "move":"n",
+      "slider":"myscroll10_slider",
+      "mode":"mouseover",
+      "animation":false,
+      "rest":2000
+    });
 </script>
 </body>
 </html>
